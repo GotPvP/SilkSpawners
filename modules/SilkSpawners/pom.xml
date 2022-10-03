@@ -40,6 +40,11 @@
       <version>1.18.24</version>
     </dependency>
     <dependency>
+      <groupId>commons-lang</groupId>
+      <artifactId>commons-lang</artifactId>
+      <version>2.6</version>
+    </dependency>
+    <dependency>
       <groupId>org.spigotmc</groupId>
       <artifactId>spigot-api</artifactId>
       <version>1.19-R0.1-SNAPSHOT</version>
@@ -110,82 +115,7 @@
     </dependency>
     <dependency>
       <groupId>de.dustplanet</groupId>
-      <artifactId>silkspawners-v1_8_R1</artifactId>
-      <version>7.3.1-SNAPSHOT</version>
-    </dependency>
-    <dependency>
-      <groupId>de.dustplanet</groupId>
-      <artifactId>silkspawners-v1_8_R3</artifactId>
-      <version>7.3.1-SNAPSHOT</version>
-    </dependency>
-    <dependency>
-      <groupId>de.dustplanet</groupId>
-      <artifactId>silkspawners-v1_9_R2</artifactId>
-      <version>7.3.1-SNAPSHOT</version>
-    </dependency>
-    <dependency>
-      <groupId>de.dustplanet</groupId>
-      <artifactId>silkspawners-v1_10_R1</artifactId>
-      <version>7.3.1-SNAPSHOT</version>
-    </dependency>
-    <dependency>
-      <groupId>de.dustplanet</groupId>
-      <artifactId>silkspawners-v1_11_R1</artifactId>
-      <version>7.3.1-SNAPSHOT</version>
-    </dependency>
-    <dependency>
-      <groupId>de.dustplanet</groupId>
-      <artifactId>silkspawners-v1_12_R1</artifactId>
-      <version>7.3.1-SNAPSHOT</version>
-    </dependency>
-    <dependency>
-      <groupId>de.dustplanet</groupId>
-      <artifactId>silkspawners-v1_13_R2</artifactId>
-      <version>7.3.1-SNAPSHOT</version>
-    </dependency>
-    <dependency>
-      <groupId>de.dustplanet</groupId>
-      <artifactId>silkspawners-v1_14_R1</artifactId>
-      <version>7.3.1-SNAPSHOT</version>
-    </dependency>
-    <dependency>
-      <groupId>de.dustplanet</groupId>
-      <artifactId>silkspawners-v1_15_R1</artifactId>
-      <version>7.3.1-SNAPSHOT</version>
-    </dependency>
-    <dependency>
-      <groupId>de.dustplanet</groupId>
-      <artifactId>silkspawners-v1_16_R1</artifactId>
-      <version>7.3.1-SNAPSHOT</version>
-    </dependency>
-    <dependency>
-      <groupId>de.dustplanet</groupId>
-      <artifactId>silkspawners-v1_16_R2</artifactId>
-      <version>7.3.1-SNAPSHOT</version>
-    </dependency>
-    <dependency>
-      <groupId>de.dustplanet</groupId>
-      <artifactId>silkspawners-v1_16_R3</artifactId>
-      <version>7.3.1-SNAPSHOT</version>
-    </dependency>
-    <dependency>
-      <groupId>de.dustplanet</groupId>
       <artifactId>silkspawners-v1_17_R1</artifactId>
-      <version>7.3.1-SNAPSHOT</version>
-    </dependency>
-    <dependency>
-      <groupId>de.dustplanet</groupId>
-      <artifactId>silkspawners-v1_18_R1</artifactId>
-      <version>7.3.1-SNAPSHOT</version>
-    </dependency>
-    <dependency>
-      <groupId>de.dustplanet</groupId>
-      <artifactId>silkspawners-v1_18_R2</artifactId>
-      <version>7.3.1-SNAPSHOT</version>
-    </dependency>
-    <dependency>
-      <groupId>de.dustplanet</groupId>
-      <artifactId>silkspawners-v1_19_R1</artifactId>
       <version>7.3.1-SNAPSHOT</version>
     </dependency>
     <dependency>
@@ -312,22 +242,6 @@
       </plugin>
     </plugins>
   </build>
-
-  <reporting>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-pmd-plugin</artifactId>
-        <version>3.16.0</version>
-        <configuration>
-          <targetJdk>1.8</targetJdk>
-          <rulesets>
-            <ruleset>https://dustplanet.de/pmd.xml</ruleset>
-          </rulesets>
-        </configuration>
-      </plugin>
-    </plugins>
-  </reporting>
 
   <scm>
     <url>https://github.com/timbru31/SilkSpawners</url>
