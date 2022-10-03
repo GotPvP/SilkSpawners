@@ -4,8 +4,11 @@ import java.util.HashMap;
 import java.util.Random;
 import java.util.logging.Level;
 
+import com.opblocks.overflowbackpacks.OverflowAPI;
+import de.dustplanet.util.FeetDrops;
 import org.bukkit.ChatColor;
 import org.bukkit.GameMode;
+import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
@@ -156,19 +159,11 @@ public class SilkSpawnersBlockListener implements Listener {
 
                 if (plugin.getConfig().getBoolean("dropSpawnerToInventory", false)) {
                     plugin.getLogger().fine("Dropping into the inventory");
-
-                    final HashMap<Integer, ItemStack> additionalItems = player.getInventory().addItem(spawnerItemStack);
-                    if (!additionalItems.isEmpty()) {
-                        plugin.getLogger().fine("Inventory is full, dropping the rest naturally on the ground");
-
-                        for (final ItemStack itemStack : additionalItems.values()) {
-                            world.dropItemNaturally(block.getLocation(), itemStack);
-                        }
-                    }
+                    OverflowAPI.add(player, spawnerItemStack);
                 } else {
                     plugin.getLogger().fine("Dropping naturally on the ground");
 
-                    world.dropItemNaturally(block.getLocation(), spawnerItemStack);
+                    FeetDrops.drop(player, block, spawnerItemStack);
                 }
             }
             return;
@@ -191,7 +186,7 @@ public class SilkSpawnersBlockListener implements Listener {
                 if (randomNumber < dropChance) {
                     plugin.getLogger().fine("Dropping a spawn egg on the ground");
 
-                    world.dropItemNaturally(block.getLocation(), su.newEggItem(entityID, 1, su.getCreatureEggName(entityID)));
+                    FeetDrops.drop(player, block, su.newEggItem(entityID, 1, su.getCreatureEggName(entityID)));
                 }
             }
 

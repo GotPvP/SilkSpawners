@@ -4,6 +4,7 @@ import java.util.Iterator;
 import java.util.Random;
 import java.util.logging.Level;
 
+import de.dustplanet.util.FeetDrops;
 import org.bukkit.World;
 import org.bukkit.block.Block;
 import org.bukkit.entity.EnderDragon;

@@ -11,7 +11,6 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <build.number>-b${BUILD_NUMBER}</build.number>
   </properties>
 
   <repositories>
@@ -122,6 +121,13 @@
       <groupId>de.dustplanet</groupId>
       <artifactId>silkspawners-API</artifactId>
       <version>7.3.1-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+      <groupId>com.opblocks</groupId>
+      <artifactId>OverflowBackpack</artifactId>
+      <version>1.0-SNAPSHOT</version>
+      <scope>system</scope>
+      <systemPath>${pom.basedir}/../../lib/OverflowBackpack.jar</systemPath>
     </dependency>
   </dependencies>
 

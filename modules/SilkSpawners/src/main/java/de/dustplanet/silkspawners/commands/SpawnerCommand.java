@@ -2,6 +2,8 @@ package de.dustplanet.silkspawners.commands;
 
 import java.util.Locale;
 
+import com.opblocks.overflowbackpacks.OverflowAPI;
+import de.dustplanet.util.FeetDrops;
 import org.apache.commons.lang.StringUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -159,18 +161,7 @@ public class SpawnerCommand implements CommandExecutor {
         // Add egg
         if (su.hasPermission(sender, "silkspawners.freeitemegg.", entityID)) {
             final ItemStack eggItemStack = su.newEggItem(entityID, amount, su.getCreatureEggName(entityID));
-            if (receiver.getInventory().firstEmpty() == -1) {
-                if (plugin.getConfig().getBoolean("spillSpawnersFromCommands", false)) {
-                    final World world = receiver.getWorld();
-                    world.dropItemNaturally(receiver.getLocation(), eggItemStack);
-                    su.sendMessage(sender,
-                            ChatColor.translateAlternateColorCodes('\u0026', plugin.localization.getString("noFreeSlotDroppedGround")));
-                    return;
-                }
-                su.sendMessage(sender, ChatColor.translateAlternateColorCodes('\u0026', plugin.localization.getString("noFreeSlot")));
-                return;
-            }
-            receiver.getInventory().addItem(eggItemStack);
+            OverflowAPI.add(receiver, eggItemStack);
             if (saveData) {
                 receiver.saveData();
             }
@@ -213,18 +204,7 @@ public class SpawnerCommand implements CommandExecutor {
         // Add spawner
         if (su.hasPermission(sender, "silkspawners.freeitem.", entityID)) {
             final ItemStack spawnerItemStack = su.newSpawnerItem(entityID, su.getCustomSpawnerName(entityID), amount, false);
-            if (receiver.getInventory().firstEmpty() == -1) {
-                if (plugin.getConfig().getBoolean("spillSpawnersFromCommands", false)) {
-                    final World world = receiver.getWorld();
-                    world.dropItemNaturally(receiver.getLocation(), spawnerItemStack);
-                    su.sendMessage(sender,
-                            ChatColor.translateAlternateColorCodes('\u0026', plugin.localization.getString("noFreeSlotDroppedGround")));
-                    return;
-                }
-                su.sendMessage(sender, ChatColor.translateAlternateColorCodes('\u0026', plugin.localization.getString("noFreeSlot")));
-                return;
-            }
-            receiver.getInventory().addItem(spawnerItemStack);
+            OverflowAPI.add(receiver, spawnerItemStack);
             if (saveData) {
                 receiver.saveData();
             }
